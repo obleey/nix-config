@@ -15,6 +15,7 @@
     ripgrep
     nerd-fonts.jetbrains-mono
     starship
+    zoxide
   ];
 
   nix.settings = {
