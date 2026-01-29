@@ -1,11 +1,6 @@
 { ... }: {
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  environment.etc."ghostty/config".text = ''
-    theme = catppuccin-macchiato
-    font-size = 14
-    macos-option-as-alt = true
-  '';
 
   system.defaults = {
     dock = {

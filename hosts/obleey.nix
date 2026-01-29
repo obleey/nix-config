@@ -4,14 +4,6 @@
     ../modules/macos.nix
   ];
 
-  # Enable Homebrew management
-  homebrew = {
-    enable = true;
-    onActivation.cleanup = "zap"; # Removes apps not listed here
-    casks = [
-      "ghostty"
-    ];
-  };
 
   system.primaryUser = "obleey";
   networking.hostName = "obleey";
