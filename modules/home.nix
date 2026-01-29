@@ -1,10 +1,8 @@
 { pkgs, ... }: {
   home.stateVersion = "24.11"; 
 
-
   # --- GHOSTTY CONFIG ---
   home.file.".config/ghostty/config".text = ''
-    # Manually defining Catppuccin Macchiato colors
     palette = 0=#494d64
     palette = 1=#ed8796
     palette = 2=#a6da95
@@ -37,16 +35,12 @@
   # --- GIT ---
   programs.git = {
     enable = true;
-    # Moving these into 'settings' to silence the warnings
     settings = {
       user = {
         name = "Miha Oblišar";
         email = "miha.oblishar@gmail.com";
       };
-      # Pro-tip: you can add other git settings here too
-      init = {
-        defaultBranch = "main";
-      };
+      init.defaultBranch = "main";
     };
   };
 
@@ -74,19 +68,16 @@
     };
   };
 
+  # --- STARSHIP ---
   programs.starship = {
     enable = true;
-    # Custom settings for Starship
     settings = {
       add_newline = false;
-      # This layout shows: [Directory] [Git] [K8s] [Terraform] [Prompt Character]
       format = "$directory$git_branch$git_status$kubernetes$terraform$character";
-      
       directory = {
         truncation_length = 3;
         fish_style_pwd_dir_length = 1;
       };
-
       character = {
         success_symbol = "[➜](bold green)";
         error_symbol = "[➜](bold red)";
@@ -94,19 +85,14 @@
     };
   };
 
+  # --- FZF ---
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
     defaultCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
-    
-    # Apply the same command to the Ctrl+T shortcut
     fileWidgetCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
-    
-    # Optional: Match your Catppuccin theme
     colors = {
-      bg = "-1";
       "bg+" = "-1";
-      fg = "-1";
       "fg+" = "#cad3f5";
       hl = "#ed8796";
       "hl+" = "#ed8796";
@@ -119,17 +105,34 @@
     };
   };
 
+  # --- ZOXIDE (The 'cd' killer) ---
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
-    # --- ZSH ---
+  # --- ZSH ---
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    # Plugins for a better experience
+    plugins = [
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
+    ];
+
     initContent = ''
       # Initialize Starship
       eval "$(starship init zsh)"
+      
+      # fzf-tab tweaks: preview directory content when completing cd
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
     '';
 
     shellAliases = {
@@ -137,7 +140,6 @@
       ll = "eza -lh --icons --git --group-directories-first";
       la = "eza -a --icons --git --group-directories-first";
       cat = "bat";
-      cd = "zoxide";
       grep = "rg";
       nix-switch = "sudo darwin-rebuild switch --flake ~/nix-darwin-config#obleey";
       nix-clean = "nix-collect-garbage -d";
