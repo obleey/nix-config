@@ -111,7 +111,7 @@
       ll = "eza -lh --icons --git --group-directories-first";
       la = "eza -a --icons --git --group-directories-first";
       cat = "bat";
-      cd = "z"
+      cd = "zoxide";
       grep = "rg";
       nix-switch = "sudo darwin-rebuild switch --flake ~/nix-darwin-config#obleey";
       nix-clean = "nix-collect-garbage -d";
