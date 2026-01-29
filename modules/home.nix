@@ -23,8 +23,6 @@
         ms-azuretools.vscode-docker
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-vscode-remote.vscode-remote-extensionpack
-        beardedbear.beardedtheme # Lowercase fix
-        beardedbear.beardedicons # Lowercase fix
         jnoortheen.nix-ide
       ];
       userSettings = {
