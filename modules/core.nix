@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
   
-  # --- ADD THIS LINE ---
   nixpkgs.config.allowUnsupportedSystem = true; 
 
   environment.systemPackages = with pkgs; [
@@ -11,6 +10,7 @@
     kubectl
     opentofu
     raycast
+    1password
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
