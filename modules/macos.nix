@@ -5,32 +5,35 @@
     finder = {
       FXPreferredViewStyle = "clmv"; 
       _FXShowPosixPathInTitle = true;
-      dock.mru-spaces = false;
+      # Removed 'dock.mru-spaces' from here
+      AppleShowAllExtensions = false;
     };
 
     dock = {
-    mineffect = "genie";           # Options: "genie", "scale"
-    minimize-to-application = true;
-    magnification = true;          # Enables the hover zoom
-    largesize = 88;                # How big the icons grow (default is usually 128)
-    tilesize = 64;                 # The base size of icons (normal size)
-    # Orientation (If you want it on the side)
-    orientation = "bottom";        # Options: "bottom", "left", "right"
-    # Other visual tweaks
-    showhidden = true;             # Transparent icons for hidden apps (very helpful!)
-    launchanim = true;
+      enable-spring-load-actions-on-all-items = true;
+      mineffect = "genie";
+      minimize-to-application = true;
+      magnification = true;
+      largesize = 88;
+      tilesize = 64;
+      orientation = "bottom";
+      showhidden = true;
+      launchanim = true;
       autohide = false;
       show-recents = false;
+      
+      # Correct location for mru-spaces
+      mru-spaces = false; 
+
       persistent-apps = [
         "/Applications/Vivaldi.app"      
-        "/Applications/Nix Apps/Visual Studio Code.app"
+        "/Applications/Visual Studio Code.app"
         "/System/Applications/App Store.app"
         "/System/Applications/Messages.app"
         "/Applications/Ghostty.app"
       ];
     };
 
-    # The declarative way to set URL handlers
     CustomUserPreferences = {
       "com.apple.coreservices.userappbindings" = {
         LSHandlers = [
@@ -45,11 +48,11 @@
           CustomList = [
             {
               Name = "OrbStack";
-              Path = "/Applications/Nix Apps/OrbStack.app";
+              Path = "/Applications/OrbStack.app";
             }
             {
               Name = "Raycast";
-              Path = "/Applications/Nix Apps/Raycast.app";
+              Path = "/Applications/Raycast.app";
             }
           ];
         };
