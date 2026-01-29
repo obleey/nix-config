@@ -5,6 +5,9 @@
     ../modules/macos.nix
   ];
 
+  # --- ADD THIS LINE ---
+  system.primaryUser = "obleey";
+
   # Host-specific settings
   networking.hostName = "obleey";
   nixpkgs.hostPlatform = "aarch64-darwin";
