@@ -9,10 +9,9 @@
     htop
     kubectl
     opentofu
-    raycast
-    _1password-gui
-    _1password-cli
     vscode
+    eza
+    bat
   ];
 
   nix.settings.experimental-features = "nix-command flakes";

@@ -1,4 +1,10 @@
 { pkgs, ... }: {
+
+  environment.systemPackages = with pkgs; [
+     raycast
+    _1password-gui 
+    _1password-cli
+  ];
   imports = [
     ../modules/core.nix
     ../modules/macos.nix

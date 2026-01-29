@@ -1,28 +1,62 @@
 { pkgs, ... }: {
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. 
   home.stateVersion = "24.11"; 
 
-  # Manage Git via Home Manager
+  # Updated Git settings
   programs.git = {
     enable = true;
-    userName = "Miha Oblišar";
-    userEmail = "your.email@example.com";
+    settings = {
+      user = {
+        name = "Miha Oblišar";
+        email = "miha.oblishar@gmail.com"
+      };
+    };
   };
 
-  # Manage VS Code Extensions via Nix!
+  # Updated VS Code settings (using the 'default' profile)
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      bbenoist.nix
-      catppuccin.catppuccin-vsc
-      catppuccin.catppuccin-vsc-icons
-      jnoortheen.nix-ide
-    ];
-    userSettings = {
-      "workbench.colorTheme" = "Catppuccin Macchiato";
-      "editor.fontSize" = 14;
-      "editor.fontFamily" = "JetBrains Mono";
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        bbenoist.nix
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
+        ms-azuretools.vscode-docker
+        henriiik.docker-linter
+        ms-kubernetes-tools.vscode-kubernetes-tools
+        ms-vscode-remote.vscode-remote-extensionpack
+        BeardedBear.beardedtheme
+        BeardedBear.beardedicons
+        jnoortheen.nix-ide
+      ];
+      userSettings = {
+        "workbench.colorTheme" = "Catppuccin Macchiato";
+        "editor.fontSize" = 14;
+        "editor.fontFamily" = "JetBrains Mono";
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nil"; # The standard Nix language server
+      };
+    };
+  };
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      # The modern 'ls'
+      ls = "eza --icons --git --group-directories-first";
+      ll = "eza -lh --icons --git --group-directories-first";
+      la = "eza -a --icons --git --group-directories-first";
+      
+      # Utilities
+      cat = "bat";
+      grep = "rg"; # If you decide to install ripgrep later
+      
+      # Nix-darwin shortcuts
+      nix-switch = "sudo darwin-rebuild switch --flake ~/nix-darwin-config#obleey";
+      nix-clean = "nix-collect-garbage -d";
+      nix-conf = "code ~/nix-darwin-config"; # Opens your config in VS Code
     };
   };
 }
