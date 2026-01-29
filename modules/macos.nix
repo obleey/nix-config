@@ -1,12 +1,10 @@
 { ... }: {
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  # --- GHOSTTY CONFIGURATION ---
   environment.etc."ghostty/config".text = ''
     theme = catppuccin-macchiato
     font-size = 14
     macos-option-as-alt = true
-    command = /run/current-system/sw/bin/zsh
   '';
 
   system.defaults = {
@@ -20,14 +18,15 @@
       ];
     };
     
-    finder = {
-      ShowRecentTags = false;
+    # Use CustomUserPreferences for keys not explicitly in nix-darwin
+    CustomUserPreferences = {
+      "com.apple.finder" = {
+        ShowRecentTags = false;
+      };
     };
 
     NSGlobalDomain = {
       AppleShowAllExtensions = true;
-      # Disables the "Recent" folders and tracking
-      "com.apple.trackpad.scaling" = 3.0; # Example of another tweak you might like
     };
   };
 }
