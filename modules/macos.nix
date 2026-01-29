@@ -11,10 +11,11 @@
       show-recents = false;
       static-only = false;
       persistent-apps = [
-        "/System/Applications/Messages.app"
-        "/System/Applications/App Store.app"
-        "/System/Applications/Nix Apps/Visual Studio Code.app"
-      ];
+            "/System/Library/CoreServices/Finder.app"
+            "/System/Applications/Messages.app"
+            "/System/Applications/App Store.app"
+            "/Applications/Nix Apps/Visual Studio Code.app"
+          ];
       persistent-others = [];
     };
 
