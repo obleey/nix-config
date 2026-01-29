@@ -10,7 +10,8 @@
     kubectl
     opentofu
     raycast
-    1password
+    _1password-gui
+    _1password-cli
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
