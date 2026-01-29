@@ -74,7 +74,27 @@
     };
   };
 
-  # --- ZSH ---
+  programs.starship = {
+    enable = true;
+    # Custom settings for Starship
+    settings = {
+      add_newline = false;
+      # This layout shows: [Directory] [Git] [K8s] [Terraform] [Prompt Character]
+      format = "$directory$git_branch$git_status$kubernetes$terraform$character";
+      
+      directory = {
+        truncation_length = 3;
+        fish_style_pwd_dir_length = 1;
+      };
+
+      character = {
+        success_symbol = "[➜](bold green)";
+        error_symbol = "[➜](bold red)";
+      };
+    };
+  };
+
+    # --- ZSH ---
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -92,4 +112,8 @@
       nix-conf = "code ~/nix-darwin-config";
     };
   };
+
+  programs.zsh.initExtra = ''
+    eval "$(starship init zsh)"
+  '';
 }

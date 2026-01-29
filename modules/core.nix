@@ -14,6 +14,7 @@
     bat
     ripgrep
     nerd-fonts.jetbrains-mono
+    starship
   ];
 
   nix.settings = {
