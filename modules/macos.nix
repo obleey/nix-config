@@ -46,11 +46,11 @@
           CustomList = [
             {
               Name = "OrbStack";
-              Path = "/Applications/OrbStack.app";
+              Path = "/Applications/Nix Apps/OrbStack.app";
             }
             {
               Name = "Raycast";
-              Path = "/Applications/Raycast.app";
+              Path = "/Applications/Nix Apps/Raycast.app";
             }
           ];
         };
