@@ -152,6 +152,7 @@
       nix-switch = "sudo darwin-rebuild switch --flake ~/nix-darwin-config#obleey";
       nix-clean = "nix-collect-garbage -d";
       nix-conf = "code ~/nix-darwin-config";
+      nix-update = "pushd ~/nix-darwin-config && nix flake update && nix-switch && popd";
     };
   };
 

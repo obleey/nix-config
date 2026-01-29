@@ -19,6 +19,7 @@
     fd
     fzf
     k9s
+    nil
   ];
 
   nix.settings = {
