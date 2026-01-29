@@ -9,7 +9,6 @@
   imports = [
     ../modules/core.nix
     ../modules/macos.nix
-    ../modules/home.nix
   ];
 
 
