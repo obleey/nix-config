@@ -5,8 +5,7 @@
     finder = {
       FXPreferredViewStyle = "clmv"; 
       _FXShowPosixPathInTitle = true;
-      AppleShowAllExtensions = false;
-      AppleShowAllFiles = false;   
+      dock.mru-spaces = false;
     };
 
     dock = {
