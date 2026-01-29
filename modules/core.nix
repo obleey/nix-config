@@ -16,6 +16,7 @@
     nerd-fonts.jetbrains-mono
     starship
     zoxide
+    fzf
   ];
 
   nix.settings = {

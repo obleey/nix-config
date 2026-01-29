@@ -94,6 +94,32 @@
     };
   };
 
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    defaultCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
+    
+    # Apply the same command to the Ctrl+T shortcut
+    fileWidgetCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
+    
+    # Optional: Match your Catppuccin theme
+    colors = {
+      bg = "-1";
+      "bg+" = "-1";
+      fg = "-1";
+      "fg+" = "#cad3f5";
+      hl = "#ed8796";
+      "hl+" = "#ed8796";
+      header = "#ed8796";
+      info = "#c6a0f6";
+      pointer = "#f4dbd6";
+      marker = "#f4dbd6";
+      prompt = "#c6a0f6";
+      spinner = "#f4dbd6";
+    };
+  };
+
+
     # --- ZSH ---
   programs.zsh = {
     enable = true;
