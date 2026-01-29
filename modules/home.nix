@@ -156,10 +156,15 @@
   };
 
   programs.ssh = {
-    enable = true;
-    extraConfig = ''
-      Host *
-        IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-    '';
-  };
+      enable = true;
+      # Silence the warning by being explicit
+      enableDefaultConfig = false;
+
+      # This replaces the old extraConfig for a cleaner structure
+      matchBlocks = {
+        "*" = {
+          identityAgent = "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+        };
+      };
+    };
 }
