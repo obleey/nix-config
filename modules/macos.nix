@@ -1,5 +1,5 @@
 { ... }: {
-
+  security.pam.services.sudo_local.touchIdAuth = true;
   system.defaults = {
     finder = {
       FXPreferredViewStyle = "clmv"; 
@@ -17,7 +17,6 @@
       persistent-others = [];
     };
 
-    security.pam.services.sudo_local.touchIdAuth = true;
     CustomUserPreferences = {
       "com.apple.finder" = {
         ShowRecentTags = false;
