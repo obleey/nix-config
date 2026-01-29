@@ -12,6 +12,7 @@
     raycast
     _1password-gui
     _1password-cli
+    vscode
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
