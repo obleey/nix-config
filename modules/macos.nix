@@ -10,10 +10,20 @@
     };
 
     dock = {
+    mineffect = "genie";           # Options: "genie", "scale"
+    # Magnification (Icons grow when you hover)
+    magnification = true;          # Enables the hover zoom
+    largesize = 64;                # How big the icons grow (default is usually 128)
+    tilesize = 48;                 # The base size of icons (normal size)
+    # Orientation (If you want it on the side)
+    orientation = "bottom";        # Options: "bottom", "left", "right"
+    # Other visual tweaks
+    showhidden = true;             # Transparent icons for hidden apps (very helpful!)
+    launchanim = true;
       autohide = false;
       show-recents = false;
       persistent-apps = [
-        "/System/Applications/Vivaldi.app"      
+        "/Applications/Vivaldi.app"      
         "/Applications/Nix Apps/Visual Studio Code.app"
         "/System/Applications/App Store.app"
         "/System/Applications/Messages.app"
