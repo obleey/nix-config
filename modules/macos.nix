@@ -5,6 +5,8 @@
     finder = {
       FXPreferredViewStyle = "clmv"; 
       _FXShowPosixPathInTitle = true;
+      AppleShowAllExtensions = false;
+      AppleShowAllFiles = false;   
     };
 
     dock = {
@@ -25,6 +27,8 @@
         LSHandlers = [
           { LSHandlerURLScheme = "http"; LSHandlerRoleAll = "com.vivaldi.Vivaldi"; }
           { LSHandlerURLScheme = "https"; LSHandlerRoleAll = "com.vivaldi.Vivaldi"; }
+          { LSHandlerContentType = "public.unix-executable"; LSHandlerRoleAll = "com.mitchellh.ghostty"; }
+          { LSHandlerContentType = "public.shell-script"; LSHandlerRoleAll = "com.mitchellh.ghostty"; }
         ];
       };
     };

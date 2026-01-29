@@ -8,8 +8,5 @@
       "vivaldi"
       "ghostty"
     ];
-    masApps = {
-      "Magnet" = 441258766;
-    };
   };
 }
