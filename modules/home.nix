@@ -141,6 +141,7 @@
       la = "eza -a --icons --git --group-directories-first";
       cat = "bat";
       grep = "rg";
+      k = "kubectl";
       nix-switch = "sudo darwin-rebuild switch --flake ~/nix-darwin-config#obleey";
       nix-clean = "nix-collect-garbage -d";
       nix-conf = "code ~/nix-darwin-config";

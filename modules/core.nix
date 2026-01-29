@@ -18,6 +18,7 @@
     zoxide
     fd
     fzf
+    k9s
   ];
 
   nix.settings = {
