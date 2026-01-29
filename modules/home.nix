@@ -101,6 +101,11 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    initContent = ''
+      # Initialize Starship
+      eval "$(starship init zsh)"
+    '';
+
     shellAliases = {
       ls = "eza --icons --git --group-directories-first";
       ll = "eza -lh --icons --git --group-directories-first";
@@ -112,8 +117,4 @@
       nix-conf = "code ~/nix-darwin-config";
     };
   };
-
-  programs.zsh.initExtra = ''
-    eval "$(starship init zsh)"
-  '';
 }
