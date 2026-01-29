@@ -13,6 +13,7 @@
     eza
     bat
     ripgrep
+    nerd-fonts.jetbrains-mono
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
