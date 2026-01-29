@@ -4,6 +4,7 @@
      raycast
     _1password-gui 
     _1password-cli
+    mas
   ];
   imports = [
     ../modules/core.nix

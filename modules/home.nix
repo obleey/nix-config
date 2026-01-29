@@ -30,7 +30,7 @@
         "editor.fontSize" = 14;
         "editor.fontFamily" = "JetBrains Mono";
         "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nil"; # The standard Nix language server
+        "nix.serverPath" = "nil";
       };
     };
   };
