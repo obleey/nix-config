@@ -11,7 +11,6 @@
     kubectl
     opentofu
     raycast
-    ghostty
   ];
 
   nix.settings.experimental-features = "nix-command flakes";

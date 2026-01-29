@@ -1,23 +1,24 @@
 { pkgs, ... }: {
-  # Import the shared logic
   imports = [
     ../modules/core.nix
     ../modules/macos.nix
   ];
 
-  # --- ADD THIS LINE ---
-  system.primaryUser = "obleey";
+  # Enable Homebrew management
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "zap"; # Removes apps not listed here
+    casks = [
+      "ghostty"
+    ];
+  };
 
-  # Host-specific settings
+  system.primaryUser = "obleey";
   networking.hostName = "obleey";
   nixpkgs.hostPlatform = "aarch64-darwin";
-
-  # Define the user
   users.users.obleey = {
     name = "obleey";
     home = "/Users/obleey";
   };
-
-  # Backwards compatibility
   system.stateVersion = 6;
 }
