@@ -41,6 +41,20 @@
           { LSHandlerContentType = "public.shell-script"; LSHandlerRoleAll = "com.mitchellh.ghostty"; }
         ];
       };
+      "com.apple.loginitems.plist" = {
+        SessionItems = {
+          CustomList = [
+            {
+              Name = "OrbStack";
+              Path = "/Applications/OrbStack.app";
+            }
+            {
+              Name = "Raycast";
+              Path = "/Applications/Raycast.app";
+            }
+          ];
+        };
+      };
     };
   };
 }

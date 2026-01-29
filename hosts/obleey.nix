@@ -5,6 +5,7 @@
     _1password-gui 
     _1password-cli
     mas
+    orbstack
   ];
   imports = [
     ../modules/core.nix
