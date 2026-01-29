@@ -1,5 +1,6 @@
 { ... }: {
   security.pam.services.sudo_local.touchIdAuth = true;
+  
   system.defaults = {
     finder = {
       FXPreferredViewStyle = "clmv"; 
@@ -9,27 +10,15 @@
     dock = {
       autohide = false;
       show-recents = false;
-      static-only = false;
       persistent-apps = [
-            "/System/Library/CoreServices/Finder.app"
-            "/System/Applications/Messages.app"
-            "/System/Applications/App Store.app"
-            "/Applications/Nix Apps/Visual Studio Code.app"
-          ];
-      persistent-others = [];
+        "/System/Applications/Messages.app"
+        "/System/Applications/App Store.app"
+        "/Applications/Nix Apps/Visual Studio Code.app"
+      ];
     };
 
+    # This handles the system-level "Default Browser" preference
     CustomUserPreferences = {
-      "com.apple.finder" = {
-        ShowRecentTags = false;
-        FXPreferredGroupBy = "Kind";
-      };
-      "com.apple.dock" = {
-        show-recents = false;
-        "recent-apps" = [];
-        "recent-documents" = [];
-        "recent-servers" = [];
-      };
       "com.apple.coreservices.userappbindings" = {
         LSHandlers = [
           {
@@ -48,4 +37,10 @@
       AppleShowAllExtensions = true;
     };
   };
+
+  # THE "NUDGE": This script forces Vivaldi as default via CLI
+  system.activationScripts.postUserActivation.text = ''
+    echo "Ensuring Vivaldi is the default browser..."
+    /opt/homebrew/bin/defaultbrowser vivaldi
+  '';
 }

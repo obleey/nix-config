@@ -9,6 +9,8 @@
   imports = [
     ../modules/core.nix
     ../modules/macos.nix
+    ../modules/homebrew.nix
+    ../modules/mas.nix
   ];
 
 
