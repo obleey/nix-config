@@ -155,16 +155,16 @@
     };
   };
 
-  programs.ssh = {
-      enable = true;
-      # Silence the warning by being explicit
-      enableDefaultConfig = false;
+programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
 
-      # This replaces the old extraConfig for a cleaner structure
-      matchBlocks = {
-        "*" = {
-          identityAgent = "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
-        };
+    matchBlocks = {
+      "*" = {
+        # Quotes are required here because of the space in "Group Containers"
+        identityAgent = "\"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
+        identitiesOnly = true;
       };
     };
+  };
 }
