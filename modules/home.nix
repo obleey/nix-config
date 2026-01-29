@@ -42,9 +42,9 @@
 
     shellAliases = {
       # The modern 'ls'
-      ls = "eza --icons --git --group-directories-first";
-      ll = "eza -lh --icons --git --group-directories-first";
-      la = "eza -a --icons --git --group-directories-first";
+      ls = "exa --icons --git --group-directories-first";
+      ll = "exa -lh --icons --git --group-directories-first";
+      la = "exa -a --icons --git --group-directories-first";
       
       # Utilities
       cat = "bat";
