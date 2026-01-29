@@ -29,7 +29,7 @@
     font-size = 14
     window-padding-x = 10
     window-padding-y = 10
-    macos-option-as-alt = true
+    macos-option-as-alt = "left"
   '';
 
   # --- GIT ---
