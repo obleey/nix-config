@@ -137,7 +137,6 @@
       if [ -f ~/.config/op/plugins.sh ]; then
         source ~/.config/op/plugins.sh
       fi
-    '';
       
       # fzf-tab tweaks: preview directory content when completing cd
       zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
