@@ -11,9 +11,11 @@
       autohide = false;
       show-recents = false;
       persistent-apps = [
-        "/System/Applications/Messages.app"
-        "/System/Applications/App Store.app"
+        "/System/Applications/Vivaldi.app"      
         "/Applications/Nix Apps/Visual Studio Code.app"
+        "/System/Applications/App Store.app"
+        "/System/Applications/Messages.app"
+        "/Applications/Ghostty.app"
       ];
     };
 
@@ -27,12 +29,3 @@
       };
     };
   };
-
-  # THE "NUDGE": Fixed for the new nix-darwin version
-  system.activationScripts.postActivation.text = ''
-    echo "Syncing default browser to Vivaldi..."
-    # 'defaultbrowser' is a CLI tool you added to homebrew.nix
-    # We run it as your user 'obleey' to satisfy macOS security
-    sudo -u obleey /opt/homebrew/bin/defaultbrowser vivaldi
-  '';
-}

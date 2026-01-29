@@ -1,12 +1,15 @@
 { ... }: {
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap"; # Semicolon added here
-    taps = [ "homebrew/cask" ];
+    onActivation.cleanup = "zap"; 
+    taps = []; 
+
     casks = [
       "vivaldi"
       "ghostty"
     ];
-    brews = [ "defaultbrowser" ]; # Utility to script the browser change
+    masApps = {
+      "Magnet" = 441258766;
+    };
   };
 }
