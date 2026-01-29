@@ -1,9 +1,32 @@
 { pkgs, ... }: {
   home.stateVersion = "24.11"; 
 
+
   # --- GHOSTTY CONFIG ---
   home.file.".config/ghostty/config".text = ''
-    theme = catppuccin-macchiato
+    # Manually defining Catppuccin Macchiato colors
+    palette = 0=#494d64
+    palette = 1=#ed8796
+    palette = 2=#a6da95
+    palette = 3=#eed49f
+    palette = 4=#8aadf4
+    palette = 5=#f5bde6
+    palette = 6=#8bd5ca
+    palette = 7=#b8c0e0
+    palette = 8=#5b6078
+    palette = 9=#ed8796
+    palette = 10=#a6da95
+    palette = 11=#eed49f
+    palette = 12=#8aadf4
+    palette = 13=#f5bde6
+    palette = 14=#8bd5ca
+    palette = 15=#a5adcb
+    background = #24273a
+    foreground = #cad3f5
+    cursor-color = #f4dbd6
+    selection-background = #44475a
+    selection-foreground = #cad3f5
+
     font-family = "JetBrainsMono Nerd Font"
     font-size = 14
     window-padding-x = 10
@@ -14,8 +37,17 @@
   # --- GIT ---
   programs.git = {
     enable = true;
-    userName = "Miha Oblišar"; # Note: standard HM use userName/userEmail
-    userEmail = "miha.oblishar@gmail.com";
+    # Moving these into 'settings' to silence the warnings
+    settings = {
+      user = {
+        name = "Miha Oblišar";
+        email = "miha.oblishar@gmail.com";
+      };
+      # Pro-tip: you can add other git settings here too
+      init = {
+        defaultBranch = "main";
+      };
+    };
   };
 
   # --- VS CODE ---
