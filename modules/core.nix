@@ -1,10 +1,19 @@
 { pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = "nix-command flakes";
   
+  # --- ADD THIS LINE ---
+  nixpkgs.config.allowUnsupportedSystem = true; 
+
   environment.systemPackages = with pkgs; [
-    vim git htop kubectl opentofu raycast ghostty
+    vim
+    git
+    htop
+    kubectl
+    opentofu
+    raycast
+    ghostty
   ];
 
+  nix.settings.experimental-features = "nix-command flakes";
   programs.zsh.enable = true;
 }
