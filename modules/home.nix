@@ -21,11 +21,10 @@
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
         ms-azuretools.vscode-docker
-        henriiik.docker-linter
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-vscode-remote.vscode-remote-extensionpack
-        BeardedBear.beardedtheme
-        BeardedBear.beardedicons
+        beardedbear.beardedtheme # Lowercase fix
+        beardedbear.beardedicons # Lowercase fix
         jnoortheen.nix-ide
       ];
       userSettings = {
