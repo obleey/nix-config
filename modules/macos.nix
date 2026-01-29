@@ -11,10 +11,10 @@
 
     dock = {
     mineffect = "genie";           # Options: "genie", "scale"
-    # Magnification (Icons grow when you hover)
+    minimize-to-application = true;
     magnification = true;          # Enables the hover zoom
-    largesize = 64;                # How big the icons grow (default is usually 128)
-    tilesize = 48;                 # The base size of icons (normal size)
+    largesize = 88;                # How big the icons grow (default is usually 128)
+    tilesize = 64;                 # The base size of icons (normal size)
     # Orientation (If you want it on the side)
     orientation = "bottom";        # Options: "bottom", "left", "right"
     # Other visual tweaks
