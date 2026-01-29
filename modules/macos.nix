@@ -13,6 +13,7 @@
       persistent-apps = [
         "/System/Applications/Messages.app"
         "/System/Applications/App Store.app"
+        "/System/Applications/Visual Studio Code.app"”
       ];
       persistent-others = [];
     };
