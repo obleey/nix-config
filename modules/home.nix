@@ -163,7 +163,6 @@ programs.ssh = {
       "*" = {
         # Quotes are required here because of the space in "Group Containers"
         identityAgent = "\"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
-        identitiesOnly = true;
       };
     };
   };
