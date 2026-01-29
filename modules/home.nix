@@ -7,7 +7,7 @@
     settings = {
       user = {
         name = "Miha Oblišar";
-        email = "miha.oblishar@gmail.com"
+        email = "miha.oblishar@gmail.com";
       };
     };
   };
