@@ -14,6 +14,7 @@
         ms-azuretools.vscode-docker
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-vscode-remote.vscode-remote-extensionpack
+        redhat.vscode-yaml
         jnoortheen.nix-ide
       ];
     };

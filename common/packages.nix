@@ -14,6 +14,8 @@
   personal = with pkgs; [
     kubectl
     k9s
+    kubernetes-helm
+    minikube
     opentofu
    ]; 
 
