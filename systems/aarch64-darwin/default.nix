@@ -1,4 +1,10 @@
-{ pkgs, user, hostname, ... }: {
+{
+  pkgs,
+  user,
+  hostname,
+  ...
+}:
+{
   imports = [
     ../../common/nix-settings
     ../../common/nix-settings/darwin.nix
@@ -7,6 +13,7 @@
   ];
 
   # Use the variable passed from flake.nix
+
   system.primaryUser = user;
 
   users.users.${user} = {
@@ -28,7 +35,7 @@
   ];
 
   programs.zsh.enable = true;
-  
+
   # Ensure unfree software (like Cursor/Vivaldi) is allowed
   nixpkgs.config.allowUnfree = true;
 

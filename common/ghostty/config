@@ -27,3 +27,10 @@ font-size = 14
 window-padding-x = 10
 window-padding-y = 10
 macos-option-as-alt = false
+
+# Jump words with Option + Left/Right
+keybind = opt+left=esc:b
+keybind = opt+right=esc:f
+
+# Option + Backspace to delete a word
+keybind = opt+backspace=text:\x1b\x7f

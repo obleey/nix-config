@@ -26,6 +26,7 @@
       "spotify"
       "slack"
       "discord"
+      "appcleaner"
     ];
     masApps = {
       "Xnip" = 1221250572;

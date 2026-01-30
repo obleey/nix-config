@@ -1,5 +1,11 @@
-{ config, pkgs, user, hostname, ... }: 
-let 
+{
+  config,
+  pkgs,
+  user,
+  hostname,
+  ...
+}:
+let
   allPkgs = import ../../common/packages.nix { inherit pkgs; };
 in
 {
@@ -14,15 +20,11 @@ in
     ../../common/fzf
     ../../common/zoxide
     ../../common/neovim
-    ../../common/git 
+    ../../common/git
   ];
 
   # Handle packages here so you don't repeat this block in every host
-  home.packages = allPkgs.shared 
-    ++ (if hostname == "obleey-work" then allPkgs.work else allPkgs.personal);
-
-  home.file."Library/Application Support/Cursor/User/settings.json".source = 
-    config.lib.file.mkOutOfStoreSymlink "/Users/${user}/Library/Application Support/Code/User/settings.json";
-
+  home.packages =
+    allPkgs.shared ++ (if hostname == "obleey-work" then allPkgs.work else allPkgs.personal);
   home.stateVersion = "24.11";
 }
