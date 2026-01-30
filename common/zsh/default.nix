@@ -26,6 +26,8 @@
       ls = "eza --icons --git --group-directories-first";
       ll = "eza -lh --icons --git --group-directories-first";
       la = "eza -a --icons --git --group-directories-first";
+      cd = "z";
+      cdi = "zi";
       ccat = "bat";
       grep = "rg";
       k = "kubectl";
