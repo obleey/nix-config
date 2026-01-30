@@ -35,7 +35,7 @@
     darwinConfigurations = {
       # "hostname" = mkDarwin { hostname = "hostname"; hostFolder = "folder"; };
       "obleey-macbook"      = mkDarwin { hostname = "obleey-macbook";      hostFolder = "personal"; user = "obleey"; };
-      "obleey-work" = mkDarwin { hostname = "gamanza-work"; hostFolder = "work"; user = "miha.oblisar"; };
+      "obleey-work" = mkDarwin { hostname = "obleey-work"; hostFolder = "work"; user = "miha.oblisar"; };
     };
   };
 }
