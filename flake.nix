@@ -1,5 +1,5 @@
 {
-  description = "Obleey's Modular Nix-Darwin Config";
+  description = "Macbook configs - work and personal";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
