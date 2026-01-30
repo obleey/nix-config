@@ -12,25 +12,28 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }: 
   let
     user = "obleey";
-    # Builder function to avoid repeating code for every Mac
-    mkDarwin = { hostname }: nix-darwin.lib.darwinSystem {
+    # Helper to build configurations for different hosts
+    mkDarwin = { hostname, hostFolder, user }: nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
-      specialArgs = { inherit inputs user hostname; }; 
+      specialArgs = { inherit inputs user hostname; };
       modules = [
-        ./systems/aarch64-darwin/default.nix
+        # Pointing to the NEW host directory for system settings
+        ./hosts/${hostFolder}/default.nix
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs user hostname; };
-          home-manager.users.${user} = import ./systems/aarch64-darwin/home.nix;
+          # Pointing to the NEW host directory for user settings
+          home-manager.users.${user} = import ./hosts/${hostFolder}/home.nix;
         }
       ];
     };
   in {
     darwinConfigurations = {
-      "obleey"      = mkDarwin { hostname = "obleey"; };      # Personal
-      "obleey-work" = mkDarwin { hostname = "obleey-work"; }; # Work
+      # "hostname" = mkDarwin { hostname = "hostname"; hostFolder = "folder"; };
+      "obleey-macbook"      = mkDarwin { hostname = "obleey-macbook";      hostFolder = "personal"; user = "obleey"; };
+      "obleey-work" = mkDarwin { hostname = "gamanza-work"; hostFolder = "work"; user = "miha.oblisar"; };
     };
   };
 }

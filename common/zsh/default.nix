@@ -31,7 +31,7 @@
       ccat = "bat";
       grep = "rg";
       k = "kubectl";
-      nix-switch = "sudo darwin-rebuild switch --flake ~/nix-darwin-config#obleey";
+      nix-switch = "sudo darwin-rebuild switch --flake ~/nix-darwin-config#$(hostname -s)";
       nix-clean = "nix-collect-garbage -d";
       nix-conf = "code ~/nix-darwin-config";
       nix-update = "pushd ~/nix-darwin-config && nix flake update && nix-switch && popd";

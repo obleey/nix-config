@@ -22,8 +22,8 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    k9s
-    kubectl
+    nil
+    nixpkgs-fmt
     nerd-fonts.jetbrains-mono
   ];
 
