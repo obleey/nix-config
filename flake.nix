@@ -13,7 +13,9 @@
   let
     user = "obleey";
     # Helper to build configurations for different hosts
-    mkDarwin = { hostname, hostFolder, user }: nix-darwin.lib.darwinSystem {
+    mkDarwin = { hostname, hostFolder, user }: 
+    builtins.trace "🚀 EVALUATING CONFIGURATION: Host=[${hostname}] Folder=[${hostFolder}] User=[${user}]"
+    nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = { inherit inputs user hostname; };
       modules = [

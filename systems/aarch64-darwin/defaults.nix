@@ -1,4 +1,4 @@
-{ hostname, ... }: {
+{ hostname, lib,  ... }: {
   security.pam.services.sudo_local.touchIdAuth = true;
   
   system.defaults = {
@@ -32,19 +32,11 @@
       autohide = false;
       show-recents = false;
       mru-spaces = false; 
-
-      # Dynamic Dock based on machine
       persistent-apps = [
-        "/Applications/Vivaldi.app"      
-        "/Applications/Cursor.app"
-        "/Applications/Visual Studio Code.app"
+        "/Applications/Vivaldi.app"
         "/Applications/Ghostty.app"
-        "/System/Applications/Messages.app"
-      ] ++ (if hostname == "obleey-work" then [
-        "/Applications/Slack.app"
-      ] else [
-        "/System/Applications/App Store.app"
-      ]);
+      ];
+
     };
 
     CustomUserPreferences = {
@@ -61,6 +53,7 @@
           CustomList = [
             { Name = "OrbStack"; Path = "/Applications/OrbStack.app"; }
             { Name = "Raycast"; Path = "/Applications/Raycast.app"; }
+            { Name = "Magnet"; Path = "/Applications/Magnet.app"; }
           ];
         };
       };
