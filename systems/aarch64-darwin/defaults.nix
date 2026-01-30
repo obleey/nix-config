@@ -3,6 +3,7 @@
   security.pam.services.sudo_local.touchIdAuth = true;
   
   system.defaults = {
+    NSGlobalDomain.AppleShowAllExtensions = false;
     finder = {
       FXPreferredViewStyle = "clmv"; 
       _FXShowPosixPathInTitle = true;
@@ -25,7 +26,7 @@
 
       persistent-apps = [
         "/Applications/Vivaldi.app"      
-        "/Applications/Nix Apps/Visual Studio Code.app"
+        "/Applications/Visual Studio Code.app"
         "/System/Applications/App Store.app"
         "/System/Applications/Messages.app"
         "/Applications/Ghostty.app"

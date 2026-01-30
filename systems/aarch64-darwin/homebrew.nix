@@ -17,6 +17,10 @@
     casks = [
       "vivaldi"
       "ghostty"
+      "orbstack"
+      "visual-studio-code"
+      "1password"
+      "1password-cli"
     ];
 
     # Apps from the Mac App Store

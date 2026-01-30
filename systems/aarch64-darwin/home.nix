@@ -14,5 +14,4 @@
   ];
 
   home.stateVersion = "24.11";
-  # ... remove the old Starship block from here ...
 }

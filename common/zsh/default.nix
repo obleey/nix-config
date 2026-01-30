@@ -8,7 +8,7 @@
     # Logic: Pull plugins from our sidecar file
     plugins = import ./plugins.nix { inherit pkgs; };
 
-    initExtra = ''
+    initContent = ''
       # Initialize Starship
       eval "$(starship init zsh)"
 
@@ -26,7 +26,7 @@
       ls = "eza --icons --git --group-directories-first";
       ll = "eza -lh --icons --git --group-directories-first";
       la = "eza -a --icons --git --group-directories-first";
-      cat = "bat";
+      ccat = "bat";
       grep = "rg";
       k = "kubectl";
       nix-switch = "sudo darwin-rebuild switch --flake ~/nix-darwin-config#obleey";
