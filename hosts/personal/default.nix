@@ -1,4 +1,10 @@
-{ user, hostname, lib, ... }: {
+{
+  user,
+  hostname,
+  lib,
+  ...
+}:
+{
   imports = [ ../../systems/aarch64-darwin/default.nix ];
 
   networking.hostName = hostname;
@@ -14,11 +20,70 @@
   homebrew = {
     enable = true;
     casks = [
-      "1password"      # Personal only
+      "raycast"
+      "1password" # Personal only
       "1password-cli"
       "spotify"
       "slack"
       "discord"
     ];
+    masApps = {
+      "Xnip" = 1221250572;
+    };
   };
+
+  launchd.user.agents = {
+    xnip = {
+      serviceConfig = {
+        ProgramArguments = [
+          "/usr/bin/open"
+          "-g"
+          "-a"
+          "Xnip"
+        ];
+        RunAtLoad = true;
+        ProcessType = "Interactive";
+      };
+    };
+
+    "1password" = {
+      serviceConfig = {
+        ProgramArguments = [
+          "/usr/bin/open"
+          "-g"
+          "-a"
+          "1Password"
+        ];
+        RunAtLoad = true;
+        ProcessType = "Interactive";
+      };
+    };
+
+    raycast = {
+      serviceConfig = {
+        ProgramArguments = [
+          "/usr/bin/open"
+          "-g"
+          "-a"
+          "Raycast"
+        ];
+        RunAtLoad = true;
+        ProcessType = "Interactive";
+      };
+    };
+
+    magnet = {
+      serviceConfig = {
+        ProgramArguments = [
+          "/usr/bin/open"
+          "-g"
+          "-a"
+          "Magnet"
+        ];
+        RunAtLoad = true;
+        ProcessType = "Interactive";
+      };
+    };
+  };
+
 }

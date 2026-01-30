@@ -11,6 +11,8 @@
     "workbench.iconTheme" = "catppuccin-macchiato";
     "editor.fontSize" = 14;
     "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
+
+    "editor.formatOnSave" = true;
     
     # --- NIX DEVELOPMENT ---
     "nix.enableLanguageServer" = true;
