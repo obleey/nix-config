@@ -71,6 +71,18 @@
         ProcessType = "Interactive";
       };
     };
+    magnet = {
+      serviceConfig = {
+        ProgramArguments = [
+          "/usr/bin/open"
+          "-g"
+          "-a"
+          "Magnet"
+        ];
+        RunAtLoad = true;
+        ProcessType = "Interactive";
+      };
+    };
   };
   system.defaults.CustomUserPreferences = {
     "com.apple.symbolichotkeys" = {

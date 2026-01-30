@@ -32,6 +32,7 @@
       launchanim = true;
       autohide = false;
       show-recents = false;
+      persistent-others = [ ];
       mru-spaces = false;
       persistent-apps = [
         "/Applications/Vivaldi.app"
