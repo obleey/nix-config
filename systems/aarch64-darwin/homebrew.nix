@@ -1,30 +1,27 @@
-{ pkgs, ... }: {
-  # Install the 'mas' CLI tool so Nix can talk to the App Store
-  environment.systemPackages = [ pkgs.mas ];
-
+{ hostname, ... }: {
   homebrew = {
     enable = true;
-    
     onActivation = {
-      cleanup = "zap";      # Uninstalls anything not listed here
-      autoUpdate = true;   # Update Homebrew and all formulae
-      upgrade = true;      # Upgrade all installed casks
+      cleanup = "zap"; 
+      autoUpdate = true;
+      upgrade = true;
     };
 
-    taps = []; 
-
-    # GUI Apps from Homebrew
     casks = [
       "vivaldi"
       "ghostty"
       "orbstack"
-      "visual-studio-code"
-      "1password"
-      "1password-cli"
       "cursor"
-    ];
+      "visual-studio-code"
+    ] 
+    ++ (if hostname == "obleey" then [
+      "1password"      # Personal only
+      "1password-cli"  # Personal only
+    ] else [
+      "slack"          # Work only
+      "zoom"           # Work only
+    ]);
 
-    # Apps from the Mac App Store
     masApps = {
       "Magnet" = 441258766;
     };

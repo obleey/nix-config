@@ -1,30 +1,36 @@
-{ pkgs, ... }: {
+{ pkgs, user, hostname, ... }: {
   imports = [
     ../../common/nix-settings
     ../../common/nix-settings/darwin.nix
-    ../../common/packages.nix
     ./defaults.nix
     ./homebrew.nix
   ];
 
-  # NEW: Required by newer nix-darwin versions for your Dock/Finder settings
-  system.primaryUser = "obleey";
+  # Use the variable passed from flake.nix
+  system.primaryUser = user;
 
-  users.users.obleey = {
-    name = "obleey";
-    home = "/Users/obleey";
+  users.users.${user} = {
+    name = user;
+    home = "/Users/${user}";
   };
 
-  # REMOVED: services.nix-daemon.enable (nix-darwin now does this automatically)
+  # Networking
+  networking.hostName = hostname;
+  networking.computerName = hostname;
 
+  # System-wide packages
   environment.systemPackages = with pkgs; [
     vim
     git
     k9s
-    opentofu
+    kubectl
     nerd-fonts.jetbrains-mono
   ];
 
   programs.zsh.enable = true;
+  
+  # Ensure unfree software (like Cursor/Vivaldi) is allowed
+  nixpkgs.config.allowUnfree = true;
+
   system.stateVersion = 5;
 }

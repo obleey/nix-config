@@ -1,18 +1,12 @@
-{ ... }: {
-  # Enable TouchID for sudo (Mac hardware specific)
+{ hostname, ... }: {
   security.pam.services.sudo_local.touchIdAuth = true;
   
   system.defaults = {
     NSGlobalDomain = {
-      # Disable autocorrect
       NSAutomaticSpellingCorrectionEnabled = false;
-      # Disable autocapitalization
       NSAutomaticCapitalizationEnabled = false;
-      # Disable smart dashes (bonus - great for devs)
       NSAutomaticDashSubstitutionEnabled = false;
-      # Disable smart quotes (bonus - prevents code copy-paste issues)
       NSAutomaticQuoteSubstitutionEnabled = false;
-      # Disable period substitution (pressing space twice)
       NSAutomaticPeriodSubstitutionEnabled = false;
       AppleICUForce24HourTime = true;
       AppleInterfaceStyle = "Dark";
@@ -39,14 +33,18 @@
       show-recents = false;
       mru-spaces = false; 
 
+      # Dynamic Dock based on machine
       persistent-apps = [
         "/Applications/Vivaldi.app"      
+        "/Applications/Cursor.app"
         "/Applications/Visual Studio Code.app"
-        "/Applications/Cursor.app"       
-        "/System/Applications/App Store.app"
-        "/System/Applications/Messages.app"
         "/Applications/Ghostty.app"
-      ];
+        "/System/Applications/Messages.app"
+      ] ++ (if hostname == "obleey-work" then [
+        "/Applications/Slack.app"
+      ] else [
+        "/System/Applications/App Store.app"
+      ]);
     };
 
     CustomUserPreferences = {

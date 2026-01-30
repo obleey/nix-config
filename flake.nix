@@ -1,5 +1,5 @@
 {
-  description = "Modular Nix Configuration";
+  description = "Obleey's Modular Nix-Darwin Config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -9,22 +9,28 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }: {
-    # macOS Configuration
-    darwinConfigurations."obleey" = nix-darwin.lib.darwinSystem {
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }: 
+  let
+    user = "obleey";
+    # Builder function to avoid repeating code for every Mac
+    mkDarwin = { hostname }: nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
+      specialArgs = { inherit inputs user hostname; }; 
       modules = [
-        ./systems/aarch64-darwin/default.nix # Entry for Mac
+        ./systems/aarch64-darwin/default.nix
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.obleey = import ./systems/aarch64-darwin/home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs user hostname; };
+          home-manager.users.${user} = import ./systems/aarch64-darwin/home.nix;
         }
       ];
     };
-    
-    # Linux/WSL Configuration (For the future)
-    # homeConfigurations."obleey-linux" = home-manager.lib.homeManagerConfiguration { ... };
+  in {
+    darwinConfigurations = {
+      "obleey"      = mkDarwin { hostname = "obleey"; };      # Personal
+      "obleey-work" = mkDarwin { hostname = "obleey-work"; }; # Work
+    };
   };
 }
