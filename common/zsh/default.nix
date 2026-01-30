@@ -32,6 +32,7 @@
       ccat = "bat";
       grep = "rg";
       k = "kubectl";
+      find = "fd";
       nix-switch = "sudo darwin-rebuild switch --flake .#$(hostname -s)";
       nix-clean = "nix-collect-garbage -d";
       nix-conf = "code ~/nix-darwin-config";
