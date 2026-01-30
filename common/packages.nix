@@ -10,5 +10,6 @@
     ripgrep        
     nil        
     nixpkgs-fmt 
+    kubectl
   ];
 }
