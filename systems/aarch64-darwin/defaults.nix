@@ -3,11 +3,26 @@
   security.pam.services.sudo_local.touchIdAuth = true;
   
   system.defaults = {
-    NSGlobalDomain.AppleShowAllExtensions = false;
+    NSGlobalDomain = {
+      # Disable autocorrect
+      NSAutomaticSpellingCorrectionEnabled = false;
+      # Disable autocapitalization
+      NSAutomaticCapitalizationEnabled = false;
+      # Disable smart dashes (bonus - great for devs)
+      NSAutomaticDashSubstitutionEnabled = false;
+      # Disable smart quotes (bonus - prevents code copy-paste issues)
+      NSAutomaticQuoteSubstitutionEnabled = false;
+      # Disable period substitution (pressing space twice)
+      NSAutomaticPeriodSubstitutionEnabled = false;
+      AppleICUForce24HourTime = true;
+      AppleInterfaceStyle = "Dark";
+      AppleShowAllExtensions = false;
+      AppleTemperatureUnit = "Celsius";
+    };
+
     finder = {
       FXPreferredViewStyle = "clmv"; 
       _FXShowPosixPathInTitle = true;
-      AppleShowAllExtensions = false;
     };
 
     dock = {
@@ -27,6 +42,7 @@
       persistent-apps = [
         "/Applications/Vivaldi.app"      
         "/Applications/Visual Studio Code.app"
+        "/Applications/Cursor.app"       
         "/System/Applications/App Store.app"
         "/System/Applications/Messages.app"
         "/Applications/Ghostty.app"
