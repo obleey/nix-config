@@ -63,4 +63,6 @@
       };
     };
   };
+  system.defaults.menuExtraClock.Show24Hour = true;
+  system.defaults.NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
 }

@@ -71,19 +71,19 @@
         ProcessType = "Interactive";
       };
     };
-
-    magnet = {
-      serviceConfig = {
-        ProgramArguments = [
-          "/usr/bin/open"
-          "-g"
-          "-a"
-          "Magnet"
-        ];
-        RunAtLoad = true;
-        ProcessType = "Interactive";
+  };
+  system.defaults.CustomUserPreferences = {
+    "com.apple.symbolichotkeys" = {
+      AppleSymbolicHotKeys = {
+        # 64 is the shortcut for Spotlight search (Cmd+Space)
+        "64" = {
+          enabled = false;
+        };
+        # 65 is the shortcut for Spotlight Finder window (Cmd+Opt+Space)
+        "65" = {
+          enabled = false;
+        };
       };
     };
   };
-
 }
