@@ -12,6 +12,7 @@
 
   # 2. Must exist, even if empty!
   personal = with pkgs; [
+    ansible
     kubectl
     k9s
     kubernetes-helm
