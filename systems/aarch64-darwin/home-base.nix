@@ -14,7 +14,6 @@ in
     ../../common/fzf
     ../../common/zoxide
     ../../common/neovim
-    ../../common/ssh
     ../../common/git 
   ];
 
