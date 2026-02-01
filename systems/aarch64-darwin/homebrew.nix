@@ -13,6 +13,7 @@
       "orbstack"
       "cursor"
       "visual-studio-code"
+      "raycast"
     ];
     masApps = {
       "Magnet" = 441258766;

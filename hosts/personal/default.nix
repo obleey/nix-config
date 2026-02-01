@@ -15,6 +15,8 @@
     "/Applications/Slack.app"
     "/Applications/Discord.app"
     "/Applications/Spotify.app"
+    "/Applications/Ableton Live 12 Standard.app"
+    "/Applications/Reaper.app"
   ];
 
   programs._1password.enable = true;
@@ -22,13 +24,15 @@
   homebrew = {
     enable = true;
     casks = [
-      "raycast"
       "1password" # Personal only
       "1password-cli"
       "spotify"
       "slack"
       "discord"
       "appcleaner"
+      "ableton-live-standard"
+      "ableset"
+      "reaper"
     ];
     masApps = {
       "Xnip" = 1221250572;
