@@ -27,15 +27,15 @@
     '';
 
     shellAliases = {
-      ls = "eza --icons --git";
-      ll = "eza -lh --icons --git";
-      la = "eza -a --icons --git";
-      cdi = "zi";
+      ls = "eza";
+      ll = "eza -lh";
+      la = "eza -a";
       ccat = "bat";
       du = "dust";
       ds = "dust -d 1";
       grep = "rg";
       k = "kubectl";
+      kontext = "kubectx";
       find = "fd";
       nix-switch = "sudo darwin-rebuild switch --flake .#$(hostname -s)";
       nix-clean = "nix-collect-garbage -d";
