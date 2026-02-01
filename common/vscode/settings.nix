@@ -3,7 +3,7 @@
   programs.vscode.profiles.default.userSettings = {
     # --- CATPPUCCIN RESTORATION ---
     "workbench.colorTheme" = "Bearded Theme feat. Will";
-    "workbench.iconTheme" = "BeardedBear.beardedicons";
+    "workbench.iconTheme" = "bearded-icons";
 
     # --- NIX & NIL CONFIG ---
     "nix.enableLanguageServer" = true;

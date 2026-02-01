@@ -25,6 +25,8 @@
 
       # fzf-tab tweaks: preview directory content when completing cd
       zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+
+      export TERM="xterm-256color"
     '';
 
     shellAliases = {

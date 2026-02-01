@@ -17,6 +17,7 @@
     ansible
     kubectl
     k9s
+    kubectx
     kubernetes-helm
     minikube
     opentofu
