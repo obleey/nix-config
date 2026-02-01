@@ -10,10 +10,7 @@
     plugins = import ./plugins.nix { inherit pkgs; };
 
     initContent = ''
-      # Initialize Starship
-      eval "$(starship init zsh)"
-
-      # 1Password CLI Plugin Integration
+       # 1Password CLI Plugin Integration
       export OP_BIOMETRIC_UNLOCK_ENABLED=true
       if [ -f ~/.config/op/plugins.sh ]; then
         source ~/.config/op/plugins.sh
@@ -24,18 +21,19 @@
       fi
 
       # fzf-tab tweaks: preview directory content when completing cd
-      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --level=2 --color=always --icons $realpath'
 
       export TERM="xterm-256color"
     '';
 
     shellAliases = {
-      ls = "eza --icons --git --group-directories-first";
-      ll = "eza -lh --icons --git --group-directories-first";
-      la = "eza -a --icons --git --group-directories-first";
-      cd = "z";
+      ls = "eza --icons --git";
+      ll = "eza -lh --icons --git";
+      la = "eza -a --icons --git";
       cdi = "zi";
       ccat = "bat";
+      du = "dust";
+      ds = "dust -d 1";
       grep = "rg";
       k = "kubectl";
       find = "fd";

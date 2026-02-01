@@ -2,14 +2,8 @@
 {
   # 1. Core tools for everyone
   shared = with pkgs; [
-    eza
-    bat
-    ripgrep
     fd
-    jq
-    zoxide
-    starship
-    mas
+    dust
   ];
 
   # 2. Must exist, even if empty!
@@ -21,6 +15,7 @@
     kubernetes-helm
     minikube
     opentofu
+    mas
   ];
 
   # 3. Must exist, even if empty!

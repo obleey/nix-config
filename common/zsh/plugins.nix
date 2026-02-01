@@ -1,8 +1,7 @@
-{ pkgs }: [
+{ pkgs }:
+[
   {
     name = "fzf-tab";
-    src = pkgs.zsh-fzf-tab;
-    file = "share/fzf-tab/fzf-tab.plugin.zsh";
+    src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
   }
-  # Add more plugins here in the future
 ]

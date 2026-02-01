@@ -21,6 +21,10 @@ in
     ../../common/zoxide
     ../../common/neovim
     ../../common/git
+    ../../common/bat
+    ../../common/eza
+    ../../common/jq
+    ../../common/ripgrep
   ];
 
   # Handle packages here so you don't repeat this block in every host
