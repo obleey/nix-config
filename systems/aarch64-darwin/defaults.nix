@@ -41,28 +41,6 @@
 
     };
 
-    CustomUserPreferences = {
-      "com.apple.coreservices.userappbindings" = {
-        LSHandlers = [
-          {
-            LSHandlerURLScheme = "http";
-            LSHandlerRoleAll = "com.vivaldi.Vivaldi";
-          }
-          {
-            LSHandlerURLScheme = "https";
-            LSHandlerRoleAll = "com.vivaldi.Vivaldi";
-          }
-          {
-            LSHandlerContentType = "public.unix-executable";
-            LSHandlerRoleAll = "com.mitchellh.ghostty";
-          }
-          {
-            LSHandlerContentType = "public.shell-script";
-            LSHandlerRoleAll = "com.mitchellh.ghostty";
-          }
-        ];
-      };
-    };
   };
   system.defaults.menuExtraClock.Show24Hour = true;
   system.defaults.NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;

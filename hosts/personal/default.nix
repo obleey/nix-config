@@ -17,6 +17,8 @@
     "/Applications/Spotify.app"
   ];
 
+  programs._1password.enable = true;
+
   homebrew = {
     enable = true;
     casks = [
@@ -30,61 +32,10 @@
     ];
     masApps = {
       "Xnip" = 1221250572;
+      "Amphetamine" = 937984704;
     };
   };
 
-  launchd.user.agents = {
-    xnip = {
-      serviceConfig = {
-        ProgramArguments = [
-          "/usr/bin/open"
-          "-g"
-          "-a"
-          "Xnip"
-        ];
-        RunAtLoad = true;
-        ProcessType = "Interactive";
-      };
-    };
-
-    "1password" = {
-      serviceConfig = {
-        ProgramArguments = [
-          "/usr/bin/open"
-          "-g"
-          "-a"
-          "1Password"
-        ];
-        RunAtLoad = true;
-        ProcessType = "Interactive";
-      };
-    };
-
-    raycast = {
-      serviceConfig = {
-        ProgramArguments = [
-          "/usr/bin/open"
-          "-g"
-          "-a"
-          "Raycast"
-        ];
-        RunAtLoad = true;
-        ProcessType = "Interactive";
-      };
-    };
-    magnet = {
-      serviceConfig = {
-        ProgramArguments = [
-          "/usr/bin/open"
-          "-g"
-          "-a"
-          "Magnet"
-        ];
-        RunAtLoad = true;
-        ProcessType = "Interactive";
-      };
-    };
-  };
   system.defaults.CustomUserPreferences = {
     "com.apple.symbolichotkeys" = {
       AppleSymbolicHotKeys = {

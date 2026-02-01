@@ -8,8 +8,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     mac-os-utils.url = "github:hraban/mac-app-util";
+    mac-os-utils.inputs.nixpkgs.follows = "nixpkgs";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
 
   outputs =
@@ -20,6 +22,7 @@
       home-manager,
       mac-os-utils,
       nix-vscode-extensions,
+      nix-homebrew,
       ...
     }:
     let
@@ -40,6 +43,7 @@
             modules = [
               # Pointing to the NEW host directory for system settings
               ./hosts/${hostFolder}/default.nix
+
               # Apply nix-vscode-extensions overlay so pkgs has latest marketplace extensions
               { nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ]; }
               home-manager.darwinModules.home-manager
@@ -49,6 +53,16 @@
                 home-manager.extraSpecialArgs = { inherit inputs user hostname; };
                 # Pointing to the NEW host directory for user settings
                 home-manager.users.${user} = import ./hosts/${hostFolder}/home.nix;
+              }
+              nix-homebrew.darwinModules.nix-homebrew
+              {
+                nix-homebrew = {
+                  enable = true;
+                  enableRosetta = true;
+                  user = user;
+                  autoMigrate = true;
+
+                };
               }
             ];
           };

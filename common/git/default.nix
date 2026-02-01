@@ -1,7 +1,7 @@
 { ... }: {
   programs.git = {
     enable = true;
-    
+
     # Modern settings structure
     settings = {
       user = {

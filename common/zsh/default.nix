@@ -19,6 +19,10 @@
         source ~/.config/op/plugins.sh
       fi
 
+      if type op > /dev/null; then
+        eval "$(op completion zsh)";
+      fi
+
       # fzf-tab tweaks: preview directory content when completing cd
       zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
     '';
@@ -38,6 +42,7 @@
       nix-conf = "code ~/nix-darwin-config";
       nix-update = "pushd . && nix flake update && nix-switch && popd";
       nix-upgrade = "git add . && nix flake update && sudo darwin-rebuild switch --flake .";
+      ops = "op signin";
     };
   };
 }

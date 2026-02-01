@@ -30,12 +30,11 @@
     vim
     git
     nil
-    nixpkgs-fmt
+    nixfmt
     nerd-fonts.jetbrains-mono
   ];
 
   programs.zsh.enable = true;
-
   # Ensure unfree software (like Cursor/Vivaldi) is allowed
   nixpkgs.config.allowUnfree = true;
 

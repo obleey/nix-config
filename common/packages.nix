@@ -1,4 +1,5 @@
-{ pkgs }: {
+{ pkgs }:
+{
   # 1. Core tools for everyone
   shared = with pkgs; [
     eza
@@ -8,6 +9,7 @@
     jq
     zoxide
     starship
+    mas
   ];
 
   # 2. Must exist, even if empty!
@@ -18,10 +20,10 @@
     kubernetes-helm
     minikube
     opentofu
-   ]; 
+  ];
 
   # 3. Must exist, even if empty!
-  work = with pkgs; [ 
+  work = with pkgs; [
     terraform
   ];
 }
