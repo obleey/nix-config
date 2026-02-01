@@ -2,7 +2,7 @@
 {
   programs.vscode.profiles.default.userSettings = {
     # --- CATPPUCCIN RESTORATION ---
-    "workbench.colorTheme" = "Bearded Theme feat. Will";
+    "workbench.colorTheme" = "Bearded Themanopia (Experimental)";
     "workbench.iconTheme" = "bearded-icons";
 
     # --- NIX & NIL CONFIG ---

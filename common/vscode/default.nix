@@ -19,6 +19,9 @@
         jnoortheen.nix-ide
         beardedbear.beardedtheme
         beardedbear.beardedicons
+        ms-vscode-remote.remote-containers
+        hashicorp.terraform
+        opentofu.vscode-opentofu
       ];
     };
   };
