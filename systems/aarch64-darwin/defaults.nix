@@ -13,6 +13,7 @@
       AppleInterfaceStyle = "Dark";
       AppleShowAllExtensions = false;
       AppleTemperatureUnit = "Celsius";
+      "com.apple.mouse.tapBehavior" = 1;
     };
 
     finder = {
@@ -40,9 +41,15 @@
       ];
 
     };
+    controlcenter = {
+      BatteryShowPercentage = true;
 
+    };
+    WindowManager = {
+      StandardHideWidgets = true;
+    };
+    trackpad = {
+      Clicking = true;
+    };
   };
-  system.defaults.menuExtraClock.Show24Hour = true;
-  system.defaults.NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
-  system.defaults.controlcenter.BatteryShowPercentage = true;
 }
