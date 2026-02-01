@@ -41,7 +41,7 @@
       nix-clean = "nix-collect-garbage -d";
       nix-conf = "code ~/nix-darwin-config";
       nix-update = "pushd . && nix flake update && nix-switch && popd";
-      nix-upgrade = "git add . && nix flake update && sudo darwin-rebuild switch --flake .";
+      nix-upgrade = "git add . && nix flake update && sudo darwin-rebuild switch --flake .#$(hostname -s)";
       ops = "op signin";
     };
   };
