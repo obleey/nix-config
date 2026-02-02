@@ -5,7 +5,7 @@
 {
   programs.ghostty = {
     enable = true;
-    package = null; # Keeps it from breaking on macOS
+    package = null;
 
     settings = {
       theme = "Catppuccin Macchiato";
