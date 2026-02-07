@@ -33,6 +33,7 @@
       "ableton-live-standard"
       "ableset"
       "reaper"
+      "monitorcontrol"
     ];
     masApps = {
       "Xnip" = 1221250572;
