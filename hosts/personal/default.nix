@@ -34,6 +34,8 @@
       "ableset"
       "reaper"
       "monitorcontrol"
+      "logi-options+"
+      "bartender"
     ];
     masApps = {
       "Xnip" = 1221250572;
