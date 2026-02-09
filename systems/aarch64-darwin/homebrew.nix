@@ -14,9 +14,12 @@
       "cursor"
       "visual-studio-code"
       "raycast"
+      "lunar"
+      "startupfolder"
+      "bartender"
     ];
     masApps = {
-      "Magnet" = 441258766;
+      # "Magnet" = 441258766;
     };
   };
 }

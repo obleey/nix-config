@@ -13,6 +13,7 @@ in
   home.homeDirectory = "/Users/${user}";
 
   imports = [
+    ../../common/aerospace
     ../../common/zsh
     ../../common/ghostty
     ../../common/vscode

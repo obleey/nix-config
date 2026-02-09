@@ -23,6 +23,9 @@
 
   homebrew = {
     enable = true;
+    # taps = [
+    #   "nikitabobko/tap"
+    # ];
     casks = [
       "1password" # Personal only
       "1password-cli"
@@ -33,9 +36,8 @@
       "ableton-live-standard"
       "ableset"
       "reaper"
-      "monitorcontrol"
       "logi-options+"
-      "bartender"
+      # "nikitabobko/tap/aerospace"
     ];
     masApps = {
       "Xnip" = 1221250572;

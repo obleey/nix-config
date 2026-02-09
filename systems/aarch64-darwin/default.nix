@@ -31,6 +31,7 @@
     git
     nil
     nixfmt
+    aerospace
     nerd-fonts.jetbrains-mono
   ];
 

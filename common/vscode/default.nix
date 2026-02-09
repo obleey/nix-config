@@ -22,6 +22,7 @@
         ms-vscode-remote.remote-containers
         hashicorp.terraform
         opentofu.vscode-opentofu
+        ms-azuretools.vscode-containers
       ];
     };
   };
